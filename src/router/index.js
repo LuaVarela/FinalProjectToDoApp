@@ -5,19 +5,24 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/home",
       name: "home",
-      component: () => import("../components/Home.vue"),
+      component: () => import("../components/home.vue"),
     },
     {
-      path: "/singIn",
-      name: "singIn",
-      component: () => import("../components/singIn.vue"),
+      path: "/signIn",
+      name: "signIn",
+      component: () => import("../components/signIn.vue"),
     },
     {
-      path: "/singUp",
-      name: "singUp",
-      component: () => import("../components/singUp.vue"),
+      path: "/signUp",
+      name: "signUp",
+      component: () => import("../components/signUp.vue"),
+    },
+    {
+      path: "/ToDoList",
+      name: "ToDoList",
+      component: () => import("../components/ToDoList.vue"),
     },
   ],
 });

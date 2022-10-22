@@ -1,35 +1,25 @@
 # FinalProjectToDoApp
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple task manager made in Vue + Bootstrap
 
-## Recommended IDE Setup
+Project premises
+Authentication
+Create an account
+Log in to the app
+Log out from the app
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+App funcionalities:
+Add a new task ➕
+Edit a task 📝
+Mark a task as complete ✅
+Delete a task ❌
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+🛠 Project setup:
+Basic setup for Vue.js and Supabase:
+$ npm vite create "my-todo-project"
+$ cd my-todo-project
+$ npm add @supabase/supabase-js
+$ npm add pinia
+$ npm add vue-router
+$ npm add pinia-plugin-persist
+$ npm i bootstrap@5.2.2
