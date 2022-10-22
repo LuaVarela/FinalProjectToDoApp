@@ -1,18 +1,37 @@
 <template>
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
-            <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
-                height="500" loading="lazy">
-        </div>
-        <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
-            <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
-                popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
-                extensive prebuilt components, and powerful JavaScript plugins.</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Login</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Register</button>
-            </div>
+    <div class="col-lg-6">
+        <h1>Task App</h1>
+        <p class="lead">An excellent application to manage your tasks and pending activities. </p>
+
+        <p class="lead"> The easiest way for you to plan your time.</p>
+
+        <p class="lead"> ¿What are you waiting for to sign up? </p>
+
+    </div>
+    <div class="cta-footer_logos">
+        <div class="logos-component">
+            <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Netflix.png" class="w-25" alt="...">
+            <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/canva.png"
+                class="w-25" alt="...">
+            <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/coca_cola.png"
+                class="w-25" alt="...">
+            <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c51f.png" class="w-25" alt="...">
         </div>
     </div>
 </template>
+
+<style >
+.logos-component {
+    filter: grayscale(90%);
+    margin: 30px;
+    align-items: center;
+    display: flow-root;
+
+}
+
+.col-lg-6 {
+    margin: 30px;
+    padding-top: 150px;
+    width: 80%;
+}
+</style>
