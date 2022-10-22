@@ -31,7 +31,8 @@
 
 .col-lg-6 {
     margin: 30px;
-    padding-top: 150px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     width: 80%;
 }
 </style>

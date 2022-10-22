@@ -44,8 +44,8 @@
 
 <style>
 .contenedor {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
     display: flex;
     position: fixed;
     align-items: center;

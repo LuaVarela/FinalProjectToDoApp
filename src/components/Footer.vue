@@ -44,7 +44,6 @@
 
 <style>
 .footer-dark {
-    padding: 50px 0;
     color: #f0f9ff;
     background-color: rgb(38, 38, 38);
     position: absolute;

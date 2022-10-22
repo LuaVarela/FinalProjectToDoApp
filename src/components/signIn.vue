@@ -21,14 +21,19 @@
                     <label class="form-check-label" for="form1Example3"> Remember me </label>
                 </div>
             </div>
-
-            <div class="col">
-                <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
-            </div>
         </div>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        <div class="col d-flex justify-content-center">
+            <button type="submit" class="btn btn-dark"
+                style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: 1.75rem; --bs-btn-font-size: 1rem;">Sign in
+            </button>
+        </div>
     </form>
 </template>
+
+<style>
+.form-outline {
+    margin: 50px;
+}
+</style>

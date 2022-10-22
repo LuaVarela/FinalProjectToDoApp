@@ -29,6 +29,10 @@
         </div>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+        <div class="col d-flex justify-content-center">
+            <button type="submit" class="btn btn-dark"
+                style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: 1.75rem; --bs-btn-font-size: 1rem;">Sign up
+            </button>
+        </div>
     </form>
 </template>
