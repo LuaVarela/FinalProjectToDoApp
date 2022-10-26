@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form class="container mt-5">
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4">
             <div class="col">
@@ -36,3 +36,9 @@
         </div>
     </form>
 </template>
+
+<style>
+.mt-5 {
+    padding-top: 100px;
+}
+</style>

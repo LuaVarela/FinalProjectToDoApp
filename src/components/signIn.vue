@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form class="container-f">
         <!-- Email input -->
         <div class="form-outline mb-4">
             <input type="email" id="form1Example1" class="form-control" />
@@ -33,7 +33,7 @@
 </template>
 
 <style>
-.form-outline {
-    margin: 50px;
+.container-f {
+    margin: 100px;
 }
 </style>

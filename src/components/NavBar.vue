@@ -34,6 +34,10 @@
                         <li class="nav-item">
                             <router-link to="/signUp" class="nav-link">Sign Up </router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link to="/home" class="nav-link"> <button type="submit" class="btn btn-danger">Log
+                                    out</button> </router-link>
+                        </li>
 
                     </ul>
                 </div>
@@ -51,5 +55,9 @@
     align-items: center;
     justify-content: center;
     color: antiquewhite;
+}
+
+.btn-danger {
+    margin: -7px 0px 0px 0px;
 }
 </style>

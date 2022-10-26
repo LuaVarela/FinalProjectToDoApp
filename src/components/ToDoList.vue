@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-light">
+    <div class="bg">
         <div class="container pt-5 pb-5">
-            <h2 class="text-center mt-5"> My list 📝</h2>
+            <h1 class="text-center mt-5"> My list 📝</h1>
             <!--Input-->
             <div class="d-flex pt-5">
                 <input v-model="task" type="text" placeholder="enter task" class="form-control">
@@ -20,13 +20,15 @@
                 <tbody class="table-group-divider">
                     <tr v-for="(task, index) in tasks" :key="index">
                         <td style="width: 500px">
-                            <span :class="{'finished': task.status === 'finished'}">
+                            <span :class="{ 'finished': task.status === 'finished' }">
                                 {{ task.name }}
                             </span>
                         </td>
                         <td style="width: 120px">
-                            <span @click="changeStatus(index)" class="pointer" :class="{'text-danger': task.status === 'to-do', 'text-warning': task.status === 'in-progress',
-                            'text-success':task.status === 'finished'}">
+                            <span @click="changeStatus(index)" class="pointer" :class="{
+                                'text-danger': task.status === 'to-do', 'text-warning': task.status === 'in-progress',
+                                'text-success': task.status === 'finished'
+                            }">
                                 {{ task.status }}
                             </span>
                         </td>
@@ -112,11 +114,12 @@ export default {
 
 <style scoped>
 .pointer {
-    cursor: pointer;
+    cursor:pointer
 }
 
 .finished {
     text-decoration: line-through;
 }
+
 </style>
 
