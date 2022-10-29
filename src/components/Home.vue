@@ -9,6 +9,7 @@
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <button type="button" class="btn btn-dark btn-lg px-4 gap-3" role="button">Sign up
                 </button>
+                <!-- Quiero que este botón me redirija al formulario de sign up  -->
             </div>
         </div>
     </div>

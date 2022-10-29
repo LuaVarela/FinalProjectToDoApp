@@ -37,6 +37,7 @@
                         <ul v-if="user" class="nav-item"></ul>
                         <li @click="logOut" class="nav-link"> <button type="submit" class="btn btn-danger">Log
                                 out</button>
+                            <!-- Quiero que al clicar este botón me redirija al home o sign in   -->
                         </li>
                     </ul>
                 </div>
