@@ -34,17 +34,30 @@
                         <li class="nav-item">
                             <router-link to="/signUp" class="nav-link">Sign Up </router-link>
                         </li>
-                        <li class="nav-item">
-                            <router-link to="/home" class="nav-link"> <button type="submit" class="btn btn-danger">Log
-                                    out</button> </router-link>
+                        <ul v-if="user" class="nav-item"></ul>
+                        <li @click="logOut" class="nav-link"> <button type="submit" class="btn btn-danger">Log
+                                out</button>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
 </template>
+
+<script setup>
+import { useUserStore } from "../stores/user"
+import { supabase } from "../supabase";
+import { storeToRefs } from 'pinia'
+const userStore = useUserStore()
+const { user } = storeToRefs(userStore)
+
+const logOut = async () => {
+    await supabase.auth.signOut();
+    useUserStore().user = null;
+    // router.push({ path: '/home' }); ----> no funciona consultar por que. 
+}
+</script>
 
 <style>
 .contenedor {

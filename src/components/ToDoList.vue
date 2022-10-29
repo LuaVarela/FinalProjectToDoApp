@@ -1,7 +1,7 @@
 <template>
-    <div class="bg">
+    <div class="bg frame">
         <div class="container pt-5 pb-5">
-            <h1 class="text-center mt-5"> My list 📝</h1>
+            <h1 class="text-center"> My list 📝</h1>
             <!--Input-->
             <div class="d-flex pt-5">
                 <input v-model="task" type="text" placeholder="enter task" class="form-control">
@@ -119,6 +119,10 @@ export default {
 
 .finished {
     text-decoration: line-through;
+}
+
+.frame {
+    margin-bottom: 10rem;
 }
 
 </style>

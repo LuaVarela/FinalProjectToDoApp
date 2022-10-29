@@ -27,4 +27,10 @@ const router = createRouter({
   ],
 });
 
+// router.beforeEach((to) => {
+//   const userStore = useUserStore();
+//   const { user } = storeToRefs(userStore);
+//   if (to.meta.requiresAuth && !user.value) return "/home";
+// });
+
 export default router;
