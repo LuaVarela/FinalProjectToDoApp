@@ -7,17 +7,17 @@ const router = createRouter({
     {
       path: "/home",
       name: "home",
-      component: () => import("../components/home.vue"),
+      component: () => import("../components/Home.vue"),
     },
     {
       path: "/signIn",
       name: "signIn",
-      component: () => import("../components/signIn.vue"),
+      component: () => import("../components/SignIn.vue"),
     },
     {
       path: "/signUp",
       name: "signUp",
-      component: () => import("../components/signUp.vue"),
+      component: () => import("../components/SignUp.vue"),
     },
     {
       path: "/ToDoList",
