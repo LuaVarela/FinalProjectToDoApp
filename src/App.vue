@@ -28,9 +28,7 @@ onMounted(async () => {
     console.log(user.value)
     if (!user.value) {
       console.log('No estas logeado')
-      // await userStore.signUp("email", "password")
-      // redirect them to logout if the user is not there
-      router.push({ path: '/signUp' });
+      router.push({ path: '/Home' });
 
     } else {
       console.log('Estas logeado')
