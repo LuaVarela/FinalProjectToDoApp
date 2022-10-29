@@ -2,6 +2,7 @@
 
     <div class="px-4 mt-5 text-center">
         <h1 class="display-5 fw-bold">📝 Task App 📝</h1>
+        <h4>Be Productive!</h4>
         <div class="col-lg-6 mx-auto p-3">
             <p class="lead">An excellent application to manage your tasks and pendings activities</p>
             <p class="lead">The easiest way for you to plan your time</p>
