@@ -31,11 +31,11 @@
 <style >
 .logos-component {
     filter: grayscale(90%);
+    margin-bottom: 10rem;
+    padding: 30px;
 }
 
 .col-lg-6 {
     margin: 30px;
-    padding-top: 80px;
-    padding-bottom: 80px;
 }
 </style>
