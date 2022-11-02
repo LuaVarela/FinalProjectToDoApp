@@ -41,7 +41,9 @@
 import { ref } from "vue";
 import { storeToRefs } from 'pinia'
 import { useUserStore } from '../stores/user'
-import { RouterView, useRouter, /*useRouter*/ } from 'vue-router'
+import { useRouter } from 'vue-router'
+
+
 const router = useRouter()
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
@@ -51,16 +53,13 @@ const email = ref("");
 const password = ref("");
 
 const onSubmit = async () => {
-
     await userStore.signUp(email.value, password.value)
     router.push({ path: '/signIn' });
 }
-
 </script>
 
 <style>
 .mt-5 {
     padding-top: 100px;
-
 }
 </style>

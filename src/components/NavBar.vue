@@ -27,9 +27,9 @@
                         <li class="nav-item">
                             <router-link to="/home" class="nav-link active" aria-current="page">Home</router-link>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <router-link to="/ToDoList" class="nav-link">My list </router-link>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <router-link to="/signIn" class="nav-link">Sign In </router-link>
                         </li>
@@ -39,7 +39,7 @@
                         <ul v-if="user" class="nav-item"></ul>
                         <li @click="logOut" class="nav-link"> <button type="submit" class="btn btn-danger">Log
                                 out</button>
-                            <!-- Quiero que al clicar este botón me redirija al home o sign in   -->
+                            <!-- Quiero que al clicar este botón me redirija al home -->
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,8 @@ const { user } = storeToRefs(userStore)
 const logOut = async () => {
     await supabase.auth.signOut();
     useUserStore().user = null;
-    // router.push({ path: '/home' }); ----> no funciona consultar por que. 
+    alert("You have been logged out!")
+    // router.push({ path: '/Home' }); ----> no funciona consultar por que. 
 }
 </script>
 

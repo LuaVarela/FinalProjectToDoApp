@@ -15,7 +15,7 @@
                             </svg></a>
 
                         <!-- Linkedin -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="www.linkedin.com/in/lua-varela"
+                        <a class="btn btn-outline-light btn-floating m-1" href="https:www.linkedin.com/in/lua-varela"
                             role="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-linkedin" viewBox="0 0 16 16">
