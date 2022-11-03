@@ -4,13 +4,13 @@
         <div class="row mb-4">
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="form3Example1" v-model="firstName" class="form-control" />
+                    <input type="text" required id="form3Example1" v-model="firstName" class="form-control" />
                     <label class="form-label" for="form3Example1">First name</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="form3Example2" v-model="lastName" class="form-control" />
+                    <input type="text" required id="form3Example2" v-model="lastName" class="form-control" />
                     <label class="form-label" for="form3Example2">Last name</label>
                 </div>
             </div>
@@ -18,13 +18,13 @@
 
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" v-model="email" class="form-control" />
+            <input type="email" required id="form3Example3" v-model="email" class="form-control" />
             <label class="form-label" for="form3Example3">Email address</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-            <input type="password" id="form3Example4" v-model="password" class="form-control" />
+            <input type="password" required id="form3Example4" v-model="password" class="form-control" />
             <label class="form-label" for="form3Example4">Password</label>
         </div>
 

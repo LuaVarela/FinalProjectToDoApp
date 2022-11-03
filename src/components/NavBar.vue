@@ -49,17 +49,19 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import { useUserStore } from "../stores/user"
 import { supabase } from "../supabase";
 import { storeToRefs } from 'pinia'
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
+const router = useRouter()
 
 const logOut = async () => {
     await supabase.auth.signOut();
     useUserStore().user = null;
-    alert("You have been logged out!")
-    // router.push({ path: '/Home' }); ----> no funciona consultar por que. 
+    alert("You have been logged out. A bit more to do? Sign in!")
+    router.push({ path: '/Home' });
 }
 </script>
 

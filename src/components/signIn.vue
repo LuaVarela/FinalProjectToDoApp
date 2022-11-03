@@ -2,13 +2,13 @@
     <form @submit.prevent="handleLogin" class="container-f">
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="email" id="form1Example1" v-model="email" class="form-control" />
+            <input type="email" required id="form1Example1" v-model="email" class="form-control" />
             <label class="form-label" for="form1Example1">Email address</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-            <input type="password" id="form1Example2" v-model="password" class="form-control" />
+            <input type="password" required id="form1Example2" v-model="password" class="form-control" />
             <label class="form-label" for="form1Example2">Password</label>
         </div>
 
@@ -47,7 +47,12 @@ const { user } = storeToRefs(userStore)
 const handleLogin = async () => {
     try {
         await userStore.signIn(email.value, password.value)
-        router.push({ path: '/ToDoList' });
+        if (!user.value) {
+            router.push({ path: '/signUp' });
+        }
+        else {
+            router.push({ path: '/ToDoList' });
+        }
     } catch (e) {
         console.log(e)
     }

@@ -116,14 +116,10 @@ export default {
 .pointer {
     cursor:pointer
 }
-
 .finished {
     text-decoration: line-through;
 }
-
 .frame {
     margin-bottom: 10rem;
 }
-
 </style>
-

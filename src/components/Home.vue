@@ -31,4 +31,5 @@
 .col-lg-6 {
     margin: 30px;
 }
-</style> -->
+</style> 
+
