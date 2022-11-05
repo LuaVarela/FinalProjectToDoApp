@@ -29,7 +29,7 @@
                         </li>
                         <!-- <li class="nav-item">
                             <router-link to="/ToDoList" class="nav-link">My list </router-link>
-                        </li> -->
+                        </li> renderizado condicional :( )-->
                         <li class="nav-item">
                             <router-link to="/signIn" class="nav-link">Sign In </router-link>
                         </li>
@@ -39,7 +39,6 @@
                         <ul v-if="user" class="nav-item"></ul>
                         <li @click="logOut" class="nav-link"> <button type="submit" class="btn btn-danger">Log
                                 out</button>
-                            <!-- Quiero que al clicar este botón me redirija al home -->
                         </li>
                     </ul>
                 </div>

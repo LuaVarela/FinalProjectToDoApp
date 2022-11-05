@@ -35,7 +35,7 @@ export const useUserStore = defineStore("user", {
         password: password,
       });
       if (user) this.user = user;
-      console.log("cualquier cosa", user);
+      console.log("iniciando", user);
       if (error) console.log(error);
     },
     async signOut() {

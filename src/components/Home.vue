@@ -1,9 +1,11 @@
 <template>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 fw-normal">📝 Task App 📝 </h1>
+            <h1 class="display-4 fw-normal">📝 Tasks App 📝 </h1>
             <p class="lead fw-normal">An excellent application to manage your tasks and pendings activities</p>
-            <p class="lead fw-normal">The easiest way for you to plan your time</p>
+            <p class="lead fw-normal">The easiest way for you to plan your time. Tasks can be organized using lists and
+                there is also the possibility of
+                modifying or marking any task as completed. </p>
             <p class="lead fw-normal"> What are you waiting for to sign up?</p>
             <RouterLink to="/signUp" class="btn btn-dark secondary">Sign up</RouterLink>
         </div>

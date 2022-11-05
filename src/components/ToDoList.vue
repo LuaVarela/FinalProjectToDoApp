@@ -1,125 +1,153 @@
 <template>
     <div class="bg frame">
         <div class="container pt-5 pb-5">
-            <h1 class="text-center"> My list 📝</h1>
-            <!--Input-->
-            <div class="d-flex pt-5">
-                <input v-model="task" type="text" placeholder="enter task" class="form-control">
-                <button @click="submitTask" class="btn btn-dark">Submit</button>
-            </div>
-            <!--Task Table-->
-            <table class="table table-bordered mt-5">
-                <thead>
-                    <tr>
-                        <th scope="col"> Pendign Task</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" class="text-center">Change your task</th>
-                        <th scope="col" class="text-center">Delete</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr v-for="(task, index) in tasks" :key="index">
-                        <td style="width: 500px">
-                            <span :class="{ 'finished': task.status === 'finished' }">
-                                {{ task.name }}
-                            </span>
-                        </td>
-                        <td style="width: 120px">
-                            <span @click="changeStatus(index)" class="pointer" :class="{
-                                'text-danger': task.status === 'to-do', 'text-warning': task.status === 'in-progress',
-                                'text-success': task.status === 'finished'
-                            }">
-                                {{ task.status }}
-                            </span>
-                        </td>
-                        <td>
-                            <div class="text-center" @click="editTask(index)">
-                                <button type="submit" class="btn btn-success btn-sm">Edit <svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                        <path
-                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                        <path fill-rule="evenodd"
-                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                    </svg> </button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center" @click="deleteTask(index)">
-                                <button type="submit" class="btn btn-danger btn-sm">Delete <svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                                    </svg></button>
-                            </div>
-                        </td>
-                    </tr>
+            <h1 class="text-center">My tasks 📝</h1>
+        </div>
+
+        <div class="d-flex pt-5 addTask">
+            <form class="tasks_new input-group" method="post" @submit.prevent="handleSubmit">
+                <input type="text" required id="btn-check-outlined" class="button input form-control addTask-text"
+                    v-model="title" placeholder="Add a new task" aria-describedby="button-addon4">
+                <div>
+                    <button class="btn btn-dark addTask-button" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <table class="table table-bordered mt-5">
+            <thead>
+                <tr>
+                    <th scope="col"> Pending Tasks</th>
+                    <!-- <th scope="col" class="text-center">Edit your task</th>
+                    <th scope="col" class="text-center">Delete</th> -->
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr v-for="(task, index) in tasks" :key="index">
+                </tr>
+            </tbody>
+        </table>
 
 
-                </tbody>
-            </table>
+        <div class="newTask">
+            <ul class="toDoList list-group">
+                <li v-for="task in tasks" class="input list-group-item">
 
+                    <div v-if="editId === task.id" class="input-group">
+
+                        <input v-model="newTitle" type="text" class="input form-control" placeholder="edit your task"
+                            aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                        <div class="input-group-append" id="button-addon4">
+                            <button @click="disableEditing" class="btn btn-dark" type="button">Cancel</button>
+                            <button @click="saveEdit(task)" class="btn btn-success addTask-save" type="button"
+                                style="--bs-btn-padding-y: .45rem; --bs-btn-padding-x: 1.2rem;">Save</button>
+                        </div>
+                    </div>
+
+                    <div v-else class="PendingTasks">
+                        <div class="input-group PendingTasks-checkbox">
+                            <input @click="changeIsComplete(task)" type="checkbox" v-model="task.is_complete">
+                        </div>
+
+                        <div class="PendingTasks-title">
+                            <span v-if="task.is_complete" @click="enableEditing(task)"><del>{{
+                                    task.title
+                            }}</del></span>
+                            <span v-else @click="enableEditing(task)">{{ task.title }}</span>
+                        </div>
+                        <div>
+                            <button @click="deleteTasks(task)" class="btn btn-danger" type="button">Delete</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
+
+
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            task: '',
-            editedTask: null,
-            availableStatuses: ['to-do', 'in-progress', 'finished'],
-            tasks: [
-                {
-                    name: 'New task                                         ',
-                    status: 'to-do'
-                },
-            ]
-        }
-    },
-    methods: {
-        submitTask() {
-            if (this.task.length === 0)
-                return;
-            if (this.editedTask === null) {
-                this.tasks.push({
-                    number: '',
-                    name: this.task,
-                    status: 'to-do'
-                });
-            } else {
-                this.tasks[this.editedTask].name = this.task;
-                this.editedTask = null;
-            }
-            this.task = '';
-        },
-        deleteTask(index) {
-            this.tasks.splice(index, 1);
-        },
-        editTask(index) {
-            this.task = this.tasks[index].name;
-            this.editedTask = index;
-        },
-        changeStatus(index) {
-            let newIndex = this.availableStatuses.indexOf(this.tasks[index].status);
-            if (++newIndex > 2) newIndex = 0;
-            this.tasks[index].status = this.availableStatuses[newIndex];
-        },
-    }
+<script setup>
+import { useTaskStore } from "../stores/task"
+import { ref } from "vue"
+import { useRouter } from 'vue-router'
+import { useUserStore } from "../stores/user"
+import { storeToRefs } from "pinia"
+
+const router = useRouter()
+const title = ref('');
+const is_complete = ref(false);
+const newTitle = ref('')
+const editId = ref(null)
+const completeId = ref(false)
+
+const taskStore = useTaskStore();
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
+const { tasks } = storeToRefs(taskStore);
+
+const handleSubmit = async () => {
+    await taskStore.createTasks(title.value, is_complete.value, user._object.user.id,)
+    title.value = ""
+    is_complete.value = false
+    await taskStore.fetchTasks();
+};
+const fetchTasks = async () => {
+    await taskStore.fetchTasks();
+}
+fetchTasks();
+const deleteTasks = async (task) => {
+    await taskStore.deleteTasks(task.id)
+    await taskStore.fetchTasks();
+};
+const enableEditing = (task) => {
+    newTitle.value = task.title
+    editId.value = task.id
+};
+const disableEditing = () => {
+    newTitle.value = ''
+    editId.value = null
+};
+const saveEdit = async (task) => {
+    task.title = newTitle.value
+    await taskStore.updateTitle(newTitle.value, task.id)
+    editId.value = null
+    await taskStore.fetchTasks();
+};
+const changeIsComplete = async (task) => {
+    task.is_complete = !task.is_complete
+    await taskStore.updateIsComplete(task.is_complete, task.id)
+    await taskStore.fetchTasks();
 };
 </script>
 
 
 <style scoped>
-.pointer {
-    cursor:pointer
+.addTask-button {
+    margin-left: 10px;
 }
-.finished {
-    text-decoration: line-through;
+
+.PendingTasks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+
+.PendingTasks-checkbox {
+    width: 15%;
+}
+
+.PendingTasks-title {
+    width: 230%;
+    text-align: left;
+}
+
+.newTask button {
+    margin-top: auto;
+    margin-right: 20px;
+}
+
 .frame {
-    margin-bottom: 10rem;
+    margin: 1rem 4.5rem 15rem 4.5rem
 }
 </style>
