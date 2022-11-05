@@ -1,6 +1,9 @@
 # FinalProjectToDoApp
 
-A simple task manager made in Vue + Bootstrap
+The websiste is made for tracking your daily tasks. It contains a Home/ sign in / sign up and a dashboard where your tasks are created, stored and, if you want, modified.
+
+Technologies used in the project
+Vue + Bootstrap 5 + Supabase.
 
 Project premises:
 •Authentication
@@ -24,7 +27,10 @@ $ npm add vue-router
 $ npm add pinia-plugin-persist
 $ npm i bootstrap@5.2.2
 
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Deploy:
+https://lucky-maamoul-2a4aea.netlify.app/home 
+
+© 2022 Lua Varela
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
